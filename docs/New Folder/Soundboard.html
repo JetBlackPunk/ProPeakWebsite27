@@ -9,15 +9,20 @@
     <title>JBP Soundboard</title>
   </head>
   <body>
+      <var>Audio = </var>
       <h1 class="title">JetBlackPunk's Soundboard</h1>
       <p>Welcome...</p>
       <!--Audio Ids-->
       <audio id="sound1" src="Audio/HalloweenBeat.mp3" preload="auto"></audio>
       <audio id="sound2" src="Audio/Temu.mp3" preload="auto"></audio>
       <audio id="sound3" src="Audio/JoeGold.wav" preload="auto"></audio>
-    
+      <audio id="sound4" src="Audio/JoeGold1.wav" preload="auto"></audio>
+      
+      <button onclick="document.getElementById('SilenceRequired').play();">Stop</button>
+      <br>
       <button onclick="document.getElementById('sound1').play();">PH Beat</button>
       <button onclick="document.getElementById('sound2').play();">Temu Song</button>
-      <button onclick="document.getElementById('sound3').play();">Hello... You</button>
+      <button onclick="document.getElementById('sound3').play();">Goldberg1</button>
+      <button onclick="document.getElementById('sound4').play();">Goldberg2</button>
   </body>
 </html>

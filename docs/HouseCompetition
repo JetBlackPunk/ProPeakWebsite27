@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <a href="index.html">Home</a>
-    <title>Pro Website</title>
+    <title>House Competition</title>
     <link rel="icon" type="image/jpg" href="Images/rick.jpg">
     <style>
 body {
@@ -14,9 +13,8 @@ body {
    <p>HELLO PEOPLE!!!</p>
     <br>
     <p>This is the House Competition :3</p>
-    <p>it is PEAKK</p>
+    <p>- Made by Tymoteusz & Mason</p>
     <br>
     <img id="Image" src="Images/Sequencing-1.png" width="840" height="1188">
 </body>
-    
 </html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kaleidoscope</title>
+
+<style>
+html, body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+canvas {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+}
+addEventListener("resize", resize);
+resize();
+
+let t = 0;
+
+function drawSlice() {
+    for (let i = 0; i < 180; i++) {
+
+        const r = i * 2.5;
+
+        const angle =
+            i * 0.18 +
+            Math.sin(t + i * 0.08) * 0.7;
+
+        const x = Math.cos(angle) * r;
+        const y = Math.sin(angle) * r;
+
+        ctx.beginPath();
+        ctx.arc(x, y, 5 + Math.sin(i + t) * 2, 0, Math.PI * 2);
+
+        ctx.fillStyle = `hsl(${(i * 4 + t * 80) % 360},100%,60%)`;
+        ctx.fill();
+    }
+}
+
+function animate() {
+
+    ctx.fillStyle = "rgba(0,0,0,0.08)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    ctx.save();
+    ctx.translate(canvas.width/2, canvas.height/2);
+
+    const slices = 16;
+
+    for(let i=0;i<slices;i++){
+
+        ctx.save();
+
+        ctx.rotate(i * Math.PI * 2 / slices);
+
+        if(i % 2)
+            ctx.scale(1,-1);
+
+        drawSlice();
+
+        ctx.restore();
+    }
+
+    ctx.restore();
+
+    t += 0.02;
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>

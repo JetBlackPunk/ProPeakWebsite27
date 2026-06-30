@@ -13,7 +13,7 @@ body {
    
 <body>
     <a href="index.html">Home</a>
-    <p1>Peak Light Yagami</p1>
+    <p1 id="txt">Peak Light Yagami</p1>
     <br>
     <button type="button" onclick="Light()">light</button>
 
@@ -21,6 +21,7 @@ body {
 function Light() {
   document.body.style.backgroundColor = "#f3f3f3";
   document.body.style.backgroundImage = "url('Images/bg4.jpg')";
+  document.getElementById("txt").innerHTML = "Peak Light Yagami";
 }
 </script>
     <button type="button" onclick="L()">lawliet</button>
@@ -29,6 +30,7 @@ function Light() {
 function L() {
   document.body.style.backgroundColor = "#f3f3f3";
   document.body.style.backgroundImage = "url('Images/Lawliet.jpg')";
+  document.getElementById("txt").innerHTML = "Peak L Lawliet";
 }
 </script>
 </body>

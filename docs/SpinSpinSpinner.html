@@ -43,4 +43,24 @@ function animate() {
 
     for (let i = 0; i < 600; i++) {
         const angle = i * 0.1 + t;
-        const
+        const radius = i * 0.6;
+
+        const x = cx + Math.cos(angle) * radius;
+        const y = cy + Math.sin(angle) * radius;
+
+        const hue = (i + t * 100) % 360;
+
+        ctx.fillStyle = `hsl(${hue},100%,60%)`;
+        ctx.beginPath();
+        ctx.arc(x, y, 2.5, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    t += 0.01;
+}
+
+animate();
+</script>
+
+</body>
+</html>
